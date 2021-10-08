@@ -1,0 +1,154 @@
+<!doctype html5>
+<html>
+<head>
+	<title>minimal flex playground</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1>flexbox playground</h1>
+		<p>this is a little page that lets you play with the Flexbox layout.</p>
+		<p>i made this in a couple afternoons because flex property names and values were too many and nonintuitive to me and the existing guides were too detailed or too flashy.</p>
+    <p>set container or item properties using the dropdowns.</p>
+	<div id="container">
+		<div id="red" class="flex-item"></div>
+		<div id="green"></div>
+		<div id="blue"></div>
+		<div id="yellow"></div>
+		<div id="magenta"></div>
+		<div id="cyan"></div>
+	</div>
+	<div id="control">
+		<div>
+			<h2>container</h2>
+			<!-- <div class="details">width: <input id="container-width" placeholder="<length>" />;</div>
+      <div class="details">height: <input id="container-height" placeholder="<length>" />;</div> -->
+			<hr />
+			<details>
+				<summary>flex-flow</summary>
+				shorthand for {flex-direction} {flex-wrap}.
+			</details>
+			<details>
+				<summary>flex-direction:
+				<select id="flex-direction">
+					<option value="row">row</option>
+					<option value="row-reverse">row-reverse</option>
+					<option value="column">column</option>
+					<option value="column-reverse">column-reverse</option>
+				</select>;
+				</summary>
+				direction in which to order the flex items.
+			</details>
+			<details>
+				<summary>flex-wrap:
+				<select id="flex-wrap">
+					<option value="nowrap">nowrap</option>
+					<option value="wrap">wrap</option>
+					<option value="wrap-reverse">wrap-reverse</option>
+				</select>;
+				</summary>
+				whether to wrap the flex items or force them onto one line.
+
+				<p><code>wrap-reverse</code> acts perpendicular to <code>flex-direction</code>; e.g., if <code>flex-direction: column</code>, <code>flex-wrap: wrap-reverse</code> reverses the horizontal order of the columns.
+			</details>
+				<hr />
+			<details>
+				<summary>justify-content:
+				<select id="justify-content">
+					<option value="center">center</option>
+					<option value="start">start</option>
+					<option value="end">end</option>
+					<option value="flex-start">flex-start</option>
+					<option value="flex-end">flex-end</option>
+					<option value="left">left</option>
+					<option value="right">right</option>
+					<option value="normal">normal</option>
+					<option value="space-between">space-between</option>
+					<option value="space-around">space-around</option>
+					<option value="space-evenly">space-evenly</option>
+					<option value="stretch">stretch</option>
+					<option value="safe center">safe center</option>
+					<option value="unsafe center">unsafe center</option>
+					<option value="inherit">inherit</option>
+					<option value="initial">initial</option>
+					<option value="unset">unset</option>
+				</select>;
+				</summary>
+			</details>
+			
+			<details>
+				<summary>align-items:
+				<select id="align-items">
+				    <option value="normal">normal</option> <option value="flex-start">flex-start</option>
+				    <option value="flex-end">flex-end</option>
+				    <option value="center" selected>center</option>
+				    <option value="baseline">baseline</option>
+				    <option value="stretch">stretch</option>
+
+				    <option value="start">start</option>
+				    <option value="end">end</option>
+				    <option value="self-start">self-start</option>
+				    <option value="self-end">self-end</option>
+				    <option value="left">left</option>
+				    <option value="right">right</option>
+
+				    <option value="first baseline">first baseline</option>
+				    <option value="last baseline">last baseline</option>
+
+				    <option value="safe center">safe center</option>
+				    <option value="unsafe center">unsafe center</option>
+				    <option value="safe right">safe right</option>
+				    <option value="unsafe right">unsafe right</option>
+				    <option value="safe end">safe end</option>
+				    <option value="unsafe end">unsafe end</option>
+				    <option value="safe self-end">safe self-end</option>
+				    <option value="unsafe self-end">unsafe self-end</option>
+				    <option value="safe flex-end">safe flex-end</option>
+				    <option value="unsafe flex-end">unsafe flex-end</option>
+				</select>;
+				</summary>
+			</details>
+		</div>
+		<div>
+			<h2>item</h2>
+
+			<div class="details">width: <input id="item-width" placeholder="<length>" />;</div>
+			<div class="details">height: <input id="item-height" placeholder="<length>" />;</div>
+			<hr />
+			<details>
+				<summary>flex</summary>
+				shorthand for {flex-basis} {flex-grow} {flex-shrink}.
+			</details>
+			<details>
+				<summary>flex-basis: <input id="flex-basis" placeholder="<length>" />;</summary>
+			item width before growing or shrinking.
+
+			<p>a width value, or one of "fill", "max-content", "min-content", "fit-content", "content."</p>
+			</details>
+			<details>
+				<summary>flex-grow: <input id="flex-grow" placeholder="<number>" />;</summary>
+			factor by which to grow item relative to others.
+
+			<p>more precisely, if some items have nonzero values for flex-grow and there is extra space,
+			items are assigned a percentage of the extra space proportional to their flex-grow value.</p>
+			</details>
+			<details>
+				<summary>flex-shrink: <input id="flex-shrink" placeholder="<number>" />;</summary>
+			factor by which to shrink item relative to others.
+
+			<p>more precisely, if some items have nonzero values for flex-shrink and there is not enough space,
+			items are shrunk by a percentage of the surplus proportional to their flex-shrink value.</p>
+			</details>
+			<details>
+				<summary>order: <input id="order" placeholder="<integer>" />;</summary>
+			ordinal placement of item.
+
+			<p>defaults to 0. thus, <code>order: 1</code> will place item <em>after</em> unordered items, whereas <code>order: -1</code> will place item before unordered items.</p>
+      <p>the other flex items are
+			</details>
+		</div>
+	</div>
+	<script src="playground.js"></script>
+</body>
+</html>
